@@ -1,0 +1,387 @@
+.dashboard {
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+/* HEADER */
+.dashboard-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-left h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.header-left p {
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.header-right {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-home,
+.btn-logout {
+  padding: 10px 20px;
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.btn-home:hover,
+.btn-logout:hover {
+  background: white;
+  color: #667eea;
+}
+
+/* STATS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+  font-size: 45px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.stat-info h3 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.stat-info p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* MAIN CONTENT */
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  gap: 30px;
+  padding: 0 40px 40px 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* BOOKINGS SECTION */
+.bookings-section {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  max-height: calc(100vh - 400px);
+  display: flex;
+  flex-direction: column;
+}
+
+.bookings-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.bookings-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bookings-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bookings-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.bookings-list::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
+
+.booking-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.booking-card:hover {
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateX(5px);
+}
+
+.booking-card.active {
+  border-color: #667eea;
+  background: #f0f4ff;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.booking-status {
+  padding: 5px 12px;
+  border-radius: 15px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.booking-time {
+  font-size: 11px;
+  color: #999;
+}
+
+.booking-info p {
+  margin: 6px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.eta,
+.distance {
+  color: #667eea;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.booking-photo {
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: 150px;
+}
+
+.booking-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.booking-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.booking-actions button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 70px;
+}
+
+.btn-accept {
+  background: #4CAF50;
+  color: white;
+}
+
+.btn-accept:hover {
+  background: #45a049;
+}
+
+.btn-onway {
+  background: #FF9800;
+  color: white;
+}
+
+.btn-onway:hover {
+  background: #F57C00;
+}
+
+.btn-complete {
+  background: #2196F3;
+  color: white;
+}
+
+.btn-complete:hover {
+  background: #1976D2;
+}
+
+.btn-cancel {
+  background: #F44336;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background: #D32F2F;
+}
+
+/* MAP SECTION */
+.map-section {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.map-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.map-wrapper {
+  flex: 1;
+  min-height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.selected-booking-info {
+  margin-top: 20px;
+  background: #f0f4ff;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+}
+
+.selected-booking-info h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.selected-booking-info p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.selected-booking-info p.highlight {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* LOADING */
+.loading-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .bookings-section {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .dashboard-content {
+    padding: 0 20px 20px 20px;
+  }
+
+  .header-left h1 {
+    font-size: 22px;
+  }
+
+  .map-wrapper {
+    min-height: 350px;
+  }
+}
